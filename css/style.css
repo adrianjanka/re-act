@@ -1,0 +1,348 @@
+/* General Styles */
+body {
+    font-family: "sarvatrik-latin-variable", sans-serif;
+    font-variation-settings: "wght" 100;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    text-align: center;
+    min-height: 100vh;
+}
+
+body::before
+{
+    content: "";
+    background-image: url('../img/backgroundimage4.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+
+
+header {
+    /* background-color: #6ba3d6; */
+    color: rgb(0, 0, 0);
+    padding-bottom: 30px;
+    padding-top: 50px;
+    width: 100%;
+    top: 0;
+}
+  
+
+h1 {
+    font-size: 4em;
+    margin: 0;
+    font-family: "podium-soft-variable",sans-serif;
+    font-variation-settings: 'wdth' 100;
+    font-weight: 100;
+}
+
+h2 {
+    font-size: 3em;
+    font-weight: 900;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: 2px solid black;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2#weatherTitle {
+    padding-top: 200px;
+}
+
+h3 {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+p {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.welcome-container {
+    margin: 20px auto;
+    width: 70%;
+}
+
+.map-container {
+    margin: 20px auto;
+    width: 80%;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+}
+
+#location h2 {
+    font-size: 3em;
+    font-weight: 900;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    border-bottom: 2px solid black;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info-container {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.nameLastseenDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.animalName {
+    flex: 1;
+    padding-bottom: 30px;
+}
+
+.lastseen {
+    flex: 1;
+    padding-bottom: 30px;
+}
+
+.imgDescDiv {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 500px;
+}
+
+.animalImage {
+    flex: 1;
+}
+
+.animalDesc {
+    flex: 1;
+    text-align: center;
+    padding-left: 5%;
+}
+
+.vacationButton {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 20px 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-top: 20px;
+    cursor: pointer;
+    font-family: "sarvatrik-latin-variable", sans-serif;
+    font-weight: 300;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+}
+
+.vacationButton:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.animal-info {
+    /* background-color: #ffffff7a; */
+    display: inline-block;
+    width: 76%;
+    margin: auto;
+    padding: 2%;
+    margin-bottom: 3%;
+}
+
+/* Weather Styles */
+
+.weatherInfoDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 200px;
+}
+
+.weatherGifDiv {
+    flex: 1;
+}
+
+.weatherGifImg {
+    width: 100%;
+}
+
+.weatherChart {
+    flex: 2;
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    color: rgb(0, 0, 0);
+    padding-bottom: 30px;
+    padding-top: 30px;
+    width: 100%;
+    bottom: 0;
+}
+
+.animalImage {
+    width: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 0.9em;
+    }
+
+    header {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h3.animalName {
+        padding-bottom: 0;
+    }
+
+    h3.lastseen {
+        padding-bottom: 0;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .welcome-container,
+    .map-container,
+    .info-container {
+        width: 90%;
+    }
+
+    .nameLastseenDiv,
+    .imgDescDiv {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .animalName,
+    .lastseen,
+    .animalImage,
+    .animalDesc {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .animalImage {
+        width: 100%!important;
+        margin-bottom: 10px;
+    }
+
+    .animalDesc {
+        padding-left: 0;
+    }
+
+    .weatherChart {
+        width: 100%;
+        height: 100%;
+    }
+
+    .weatherInfoDiv {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+}
+
+@media (min-width: 2000px){
+    body {
+        font-size: 1.5em;
+    }
+
+    h1 {
+        font-size: 6em;
+    }
+
+    h2 {
+        font-size: 4em;
+    }
+
+    h3 {
+        font-size: 2.8em;
+    }
+
+    p {
+        font-size: 32px;
+    }
+
+    header {
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+
+    .welcome-container,
+    .map-container,
+    .info-container {
+        width: 60%;
+    }
+
+    .nameLastseenDiv,
+    .imgDescDiv {
+        flex-direction: row;
+    }
+
+    .animalName,
+    .lastseen,
+    .animalImage,
+    .animalDesc {
+        flex: 1;
+        text-align: left;
+    }
+
+    .animalImage {
+        width: 300px;
+        margin-right: 20px;
+    }
+
+    .animalDesc {
+        padding-left: 5%;
+    }
+
+    .weatherChart {
+        width: 100%;
+        height: 100%;
+    }
+
+    .weatherInfoDiv {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .vacationButton {
+        font-size: 30px;
+    }
+}
