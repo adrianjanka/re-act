@@ -1,49 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tot & Wolkig</title>
-    <link rel="icon" href="favicon.ico" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>re:act – Interaktive Fotoinstallation</title>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://use.typekit.net/iiq5lhp.css">
+  <!-- Google Font Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Eigene Styles -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Title Section -->
-    <header>
-        <h1>TOT & WOLKIG</h1>
-    </header>
+  <!-- Top-Left Info -->
+  <div id="top-info">
+    <div class="pill sgkm">SGKM KONFERENZ</div>
+    <div class="pill year">2025</div>
+  </div>
 
-    <section class="welcome-container">
-        <h3>Hallo und herzlich willkommen</h3>
-        <p>
-            Wir freuen uns, dass ihr die letzten Städte von ausgestorbenen Tierarten besuchen wollt. 
-            Damit ihr nicht verregnet werdet und die richtige Kleidung mitnehmen könnt, findet ihr zu den entsprechenden Orten noch die Wetterdaten.
-        </p>
-    </section>
+  <!-- Idle-Screen Overlay -->
+  <div id="idle-screen" class="overlay">
+    <p class="idle-text">Touch the Mousepad</p>
+  </div>
 
-    <!-- Map Section -->
-    <div class="map-container">
-        <div id="map"></div>
+  <!-- Modus-Auswahl (Accordion) -->
+  <section id="mode-selector">
+    <button class="accordion-btn" data-target="auto-mode">
+      Auto Mode ▾
+    </button>
+    <button class="accordion-btn" data-target="manual-mode">
+      Manual Mode ▾
+    </button>
+  </section>
+
+  <!-- Auto-Mode -->
+  <section id="auto-mode" class="panel">
+    <div id="camera-status">
+      <p>Please stand in front of the camera :)</p>
+    </div>
+  </section>
+
+  <!-- Manual-Mode -->
+  <section id="manual-mode" class="panel">
+    <div class="manual-mode-content">
+      <div class="manual-group">
+        <div id="tubes-manual">
+          <!-- 6 Röhren mit Picker -->
+          <div class="tube-wrapper">
+            <div class="tube" data-index="0"></div>
+            <input type="color" class="tube-picker" data-index="0" title="Röhre 1 Farbe"/>
+          </div>
+          <div class="tube-wrapper">
+            <div class="tube" data-index="1"></div>
+            <input type="color" class="tube-picker" data-index="1" title="Röhre 2 Farbe"/>
+          </div>
+          <div class="tube-wrapper">
+            <div class="tube" data-index="2"></div>
+            <input type="color" class="tube-picker" data-index="2" title="Röhre 3 Farbe"/>
+          </div>
+          <div class="tube-wrapper">
+            <div class="tube" data-index="3"></div>
+            <input type="color" class="tube-picker" data-index="3" title="Röhre 4 Farbe"/>
+          </div>
+          <div class="tube-wrapper">
+            <div class="tube" data-index="4"></div>
+            <input type="color" class="tube-picker" data-index="4" title="Röhre 5 Farbe"/>
+          </div>
+          <div class="tube-wrapper">
+            <div class="tube" data-index="5"></div>
+            <input type="color" class="tube-picker" data-index="5" title="Röhre 6 Farbe"/>
+          </div>
+        </div>
+        <div id="manual-footer-buttons">
+          <button id="reset-btn" class="manual-btn">Reset Colors</button>
+          <button id="save-btn"  class="manual-btn">Save to DB</button>
+        </div>
+      </div>
+
+     <div id="manual-buttons">
+      <button id="rainbow" class="manual-btn">RAINBOW</button>
+      <button id="noisechop" class="manual-btn">noise CHOP</button>
+      <button id="lookupchop" class="manual-btn">Lookup CHOP</button>
+      <button id="video" class="manual-btn">Video?</button>
     </div>
 
-    <div id="location"></div>
+    </div>
+  </section>
 
-    <div id="info"></div>
+  <!-- Bottom-Right Logo -->
+  <div id="logo">
+    <img src="img/logo.svg" alt="re:act Logo" />
+  </div>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>© adimoritas 2024</p>
-    </footer>
-
-    
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> <!-- Leaflet -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
-    <script src="script/script.js"></script>
-
+  <!-- JS -->
+  <script src="script/script.js"></script>
 </body>
 </html>
