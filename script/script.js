@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function showIdle() {
       idleScreen.style.display = 'flex';
       idleScreen.classList.remove('hidden');
+      // send sgkmode to TD
+      sendModustoTD('sgkm');
     }
 
     function resetIdleTimer() {
@@ -93,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
           // test with first tube
-          // sendColorToTD(tubeColors[0]);
+          // sendColorToTD(tubeColors[0]); // tube nummer 0
           sendColorToTD(tubeColors);
 
         });
