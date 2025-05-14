@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const idleScreen   = document.getElementById('idle-screen');
     const accBtns      = document.querySelectorAll('.accordion-btn');
@@ -8,19 +10,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const tubeColors = {};
   
-    // 1) Idle-Screen ausblenden
-    const hideIdle = () => {
+    // === Idle-Reappearance nach 30 s Inaktivität ===
+    let idleTimer;
+    const IDLE_TIMEOUT = 30000; // 30 Sekunden
+
+    function showIdle() {
+      idleScreen.style.display = 'flex';
+      idleScreen.classList.remove('hidden');
+    }
+
+    function resetIdleTimer() {
+      clearTimeout(idleTimer);
+      // Falls Idle gerade sichtbar ist, smooth ausblenden
+      if (idleScreen.style.display !== 'none') {
         idleScreen.classList.add('hidden');
-        
         idleScreen.addEventListener('transitionend', () => {
           idleScreen.style.display = 'none';
         }, { once: true });
-      
-        window.removeEventListener('mousemove', hideIdle);
-        window.removeEventListener('keydown', hideIdle);
-      };
-    window.addEventListener('mousemove', hideIdle);
-    window.addEventListener('keydown', hideIdle);
+      }
+      idleTimer = setTimeout(showIdle, IDLE_TIMEOUT);
+    }
+
+    // Auf Activity-Events hören
+    ['mousemove','keydown','click'].forEach(evt =>
+      window.addEventListener(evt, resetIdleTimer)
+    );
+
+    // Timer initial starten
+    resetIdleTimer();
+
+
   
     // 2) Accordion-Logik
     accBtns.forEach(btn => {
@@ -69,13 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
           if (tube) tube.style.background = color;
       
           // State updaten
-          tubeColors[idx] = color;
+          tubeColors[idx] = hexToRgb(color);
           console.log(tubeColors);
 
-          // test with first tube
-          console.log(tubeColors[0]);
-          sendColorToTD(tubeColors[0]);
 
+          // test with first tube
+          // sendColorToTD(tubeColors[0]);
+          sendColorToTD(tubeColors);
 
         });
       });
@@ -108,6 +127,9 @@ document.addEventListener('DOMContentLoaded', () => {
           btn.classList.toggle('active');
           const status = btn.classList.contains('active') ? 'active' : 'inactive';
           console.log(`${btn.id} ${status}`);
+          if (status === 'active') {
+            sendModustoTD(btn.id);
+          }
         });
       });
 
@@ -126,12 +148,38 @@ function hexToRgb(hex) {
 }
 
 
-function sendColorToTD(hexcolor) {
+// manueller Modus: Farbe an TD senden
+function sendColorToTD(rgb) {
   const url = 'http://127.0.0.1:9047';
-  const rgb = hexToRgb(hexcolor);
   const payload = {
+    modus: 'manual',
     color: rgb
   };
+  myBody = JSON.stringify(payload);
+  console.log("mybody: ",myBody);
+
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: myBody
+  })
+  .then(response => {
+    console.log('Sent:', payload, 'response:', response)
+    console.log('HTTP-Status:', response.status);
+})
+  .catch(error => console.error('Fehler beim Senden:', error));
+}
+
+
+// Manual-Mode: Status-Buttons (RAINBOW, noiseCHOP, …)
+function sendModustoTD(modus) {
+  const url = 'http://127.0.0.1:9047';
+  const payload = {
+    modus
+  };
+
   myBody = JSON.stringify(payload);
   console.log("mybody: ",myBody);
 
