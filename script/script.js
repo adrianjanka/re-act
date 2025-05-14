@@ -10,36 +10,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const tubeColors = {};
   
-    // === Idle-Reappearance nach 30 s Inaktivität ===
-    let idleTimer;
-    const IDLE_TIMEOUT = 30000; // 30 Sekunden
+    idleScreen.style.display = 'none';
 
-    function showIdle() {
-      idleScreen.style.display = 'flex';
-      idleScreen.classList.remove('hidden');
-      // send sgkmode to TD
-      sendModustoTD('sgkm');
-    }
+    // Idle-Reappearance nach 30 s Inaktivität
+    // let idleTimer;
+    // const IDLE_TIMEOUT = 30000; // 30 Sekunden
 
-    function resetIdleTimer() {
-      clearTimeout(idleTimer);
-      // Falls Idle gerade sichtbar ist, smooth ausblenden
-      if (idleScreen.style.display !== 'none') {
-        idleScreen.classList.add('hidden');
-        idleScreen.addEventListener('transitionend', () => {
-          idleScreen.style.display = 'none';
-        }, { once: true });
-      }
-      idleTimer = setTimeout(showIdle, IDLE_TIMEOUT);
-    }
+    // function showIdle() {
+    //   idleScreen.style.display = 'flex';
+    //   idleScreen.classList.remove('hidden');
+    //   // send sgkmode to TD
+    //   sendModustoTD('sgkm');
+    // }
 
-    // Auf Activity-Events hören
-    ['mousemove','keydown','click'].forEach(evt =>
-      window.addEventListener(evt, resetIdleTimer)
-    );
+    // function resetIdleTimer() {
+    //   clearTimeout(idleTimer);
+    //   // Falls Idle gerade sichtbar ist, smooth ausblenden
+    //   if (idleScreen.style.display !== 'none') {
+    //     idleScreen.classList.add('hidden');
+    //     idleScreen.addEventListener('transitionend', () => {
+    //       idleScreen.style.display = 'none';
+    //     }, { once: true });
+    //   }
+    //   idleTimer = setTimeout(showIdle, IDLE_TIMEOUT);
+    // }
 
-    // Timer initial starten
-    resetIdleTimer();
+    // // Auf Activity-Events hören
+    // ['mousemove','keydown','click'].forEach(evt =>
+    //   window.addEventListener(evt, resetIdleTimer)
+    // );
+
+    // // Timer initial starten
+    // resetIdleTimer();
 
 
   
@@ -48,12 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', () => {
         const targetId = btn.dataset.target;
         const panel    = document.getElementById(targetId);
+        console.log('targetId:', panel, 'panel:', panel);
         const isOpen   = panel.style.display === 'block';
   
         panels.forEach(p => p.style.display = 'none');
         accBtns.forEach(b => b.classList.remove('active'));
   
         if (!isOpen) {
+          const id = btn.id;
+          console.log('asd: ',id);
+          // send mode to TD
+          sendModustoTD(id);
           panel.style.display = 'block';
           btn.classList.add('active');
           if (targetId === 'auto-mode') initAutoMode();
