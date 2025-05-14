@@ -37,6 +37,7 @@ body {
   font-weight: 600;
   color: var(--accent);
   font-size: 1.125rem;
+  font-family: 'Termina', sans-serif;
 }
 .pill.year {
   width: fit-content;
@@ -88,6 +89,7 @@ body {
   cursor: pointer;
   color: var(--text);
   transition: background 0.3s, color 0.3s;
+  font-family: 'Montserrat';
 }
 .accordion-btn.active {
   background: var(--accent);
@@ -109,7 +111,7 @@ body {
 }
 
 /* Auto Mode Status */
-#camera-status { font-size: 1.5rem; }
+#camera-status { font-size: 1.5rem; font-family: 'Montserrat'; }
 
 /* Manual Mode */
 #tubes-manual { display: flex; gap: 24px; }
@@ -160,6 +162,7 @@ body {
   transition: background 0.2s, color 0.2s;
   background: var(--accent);
   color: #FFF;
+  font-family: 'Termina', sans-serif;
 }
 .manual-btn:hover {
   background: var(--bg-light);
