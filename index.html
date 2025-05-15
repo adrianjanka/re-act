@@ -74,8 +74,15 @@
           </div>
         </div>
         <div id="manual-footer-buttons">
-          <button id="reset-btn" class="manual-btn">Reset Colors</button>
-          <button id="save-btn"  class="manual-btn">Save to DB</button>
+          <!-- Name-Input -->
+          <!-- <input type="text" id="name-input" placeholder="Name eingeben" /> -->
+          <!-- erste Zeile: Reset + Save -->
+          <div class="footer-row">
+            <button id="reset-btn" class="manual-btn">Reset Colors</button>
+            <button id="save-btn"  class="manual-btn">Save to DB</button>
+          </div>
+          <!-- zweite Zeile: Verlauf -->
+          <button id="verlauf-btn" class="manual-btn">History ▾</button>
         </div>
       </div>
 
@@ -88,7 +95,18 @@
     </div>
 
     </div>
+
+    <div id="chart-container" style="display: none;">
+      <p>latest 10</p>
+      <canvas id="myChart"></canvas>
+    </div>
+
   </section>
+
+
+  
+
+
 
   <!-- Bottom-Right Logo -->
   <div id="logo">
@@ -96,6 +114,7 @@
   </div>
 
   <!-- JS -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script/script.js"></script>
 </body>
 </html>
