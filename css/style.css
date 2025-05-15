@@ -70,6 +70,10 @@ body {
   50%      { opacity: 0.6; transform: scale(1.05); }
 }
 
+#auto-mode {
+  padding: 50px;
+}
+
 /* Modus-Auswahl (Accordion) */
 #mode-selector {
   position: absolute;

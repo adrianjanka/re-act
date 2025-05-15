@@ -20,35 +20,35 @@ document.addEventListener('DOMContentLoaded', () => {
     idleScreen.style.display = 'none';
 
     // Idle-Reappearance nach 30 s Inaktivität
-    // let idleTimer;
-    // const IDLE_TIMEOUT = 30000; // 30 Sekunden
+    let idleTimer;
+    const IDLE_TIMEOUT = 30000; // 30 Sekunden
 
-    // function showIdle() {
-    //   idleScreen.style.display = 'flex';
-    //   idleScreen.classList.remove('hidden');
-    //   // send sgkmode to TD
-    //   sendModustoTD('sgkm');
-    // }
+    function showIdle() {
+      idleScreen.style.display = 'flex';
+      idleScreen.classList.remove('hidden');
+      // send sgkmode to TD
+      sendModustoTD('sgkm');
+    }
 
-    // function resetIdleTimer() {
-    //   clearTimeout(idleTimer);
-    //   // Falls Idle gerade sichtbar ist, smooth ausblenden
-    //   if (idleScreen.style.display !== 'none') {
-    //     idleScreen.classList.add('hidden');
-    //     idleScreen.addEventListener('transitionend', () => {
-    //       idleScreen.style.display = 'none';
-    //     }, { once: true });
-    //   }
-    //   idleTimer = setTimeout(showIdle, IDLE_TIMEOUT);
-    // }
+    function resetIdleTimer() {
+      clearTimeout(idleTimer);
+      // Falls Idle gerade sichtbar ist, smooth ausblenden
+      if (idleScreen.style.display !== 'none') {
+        idleScreen.classList.add('hidden');
+        idleScreen.addEventListener('transitionend', () => {
+          idleScreen.style.display = 'none';
+        }, { once: true });
+      }
+      idleTimer = setTimeout(showIdle, IDLE_TIMEOUT);
+    }
 
-    // // Auf Activity-Events hören
-    // ['mousemove','keydown','click'].forEach(evt =>
-    //   window.addEventListener(evt, resetIdleTimer)
-    // );
+    // Auf Activity-Events hören
+    ['mousemove','keydown','click'].forEach(evt =>
+      window.addEventListener(evt, resetIdleTimer)
+    );
 
-    // // Timer initial starten
-    // resetIdleTimer();
+    // Timer initial starten
+    resetIdleTimer();
 
 
   
@@ -74,26 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
-  
-    // 3) Auto-Mode: WebSocket
-    window._autoSocket = null;
-    function initAutoMode() {
-      if (window._autoSocket) return;
-      const socket = new WebSocket('ws://localhost:12345');
-      window._autoSocket = socket;
-  
-      socket.onopen = () => cameraStatus.textContent = 'Connecting to camera…';
-      socket.onmessage = evt => {
-        try {
-          const data = JSON.parse(evt.data);
-          cameraStatus.textContent = data.status === 'ok'
-            ? 'Person erkannt – Aufnahme startet…'
-            : 'Bitte vor die Kamera stellen :)';
-        } catch(e) { console.error(e); }
-      };
-      socket.onerror = () => cameraStatus.textContent = 'Verbindungsfehler.';
-      socket.onclose = () => cameraStatus.textContent = 'Verbindung geschlossen.';
-    }
   
     // 4) Manual Mode: Picker
     tubePickers.forEach(picker => {
@@ -156,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(response => {
         if (response.ok) {
           console.log('Farben gespeichert (HTTP ' + response.status + ')');
+          fetchAndRenderChart();
         } else {
           console.error('Speichern fehlgeschlagen (HTTP ' + response.status + ')');
         }
