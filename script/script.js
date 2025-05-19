@@ -89,8 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
           // test with first tube
-          sendColorToTD(tubeColors[0]); // tube nummer 0
-          // sendColorToTD(tubeColors);
+          // sendColorToTD(tubeColors[0]); // tube nummer 0
+          sendColorToTD(tubeColors);
 
         });
       });
