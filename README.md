@@ -1,4 +1,4 @@
-# re:act
+# re:act - interaktive LAT-Lights Installation
 
 ## Kurzbeschrieb
 
