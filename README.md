@@ -11,6 +11,7 @@ verständliche Schritt-für-Schritt-Anleitung, um  das Projekt nachzubauen
 ## Flussdiagramm (Lukas)
 
 Screen-Flow
+<img width="927" alt="Image" src="https://github.com/user-attachments/assets/5cbfb2a4-f3b5-4c08-aee6-6ad892fe5d22" />
 
 ## Komponentenplan (Adrian)
 
