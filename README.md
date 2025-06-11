@@ -32,7 +32,7 @@ Entwicklungsprozess, verworfene Lösungsansätze, Designentscheidungen, Inspirat
 
 
 ## Video-Dokumentation (Lukas)
-Demovideo Re:act
+Download Demovideo Re:act
 https://github.com/user-attachments/assets/35be8a68-be1a-4026-98fe-d847e1191600
 
 
