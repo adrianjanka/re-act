@@ -30,8 +30,8 @@ Entwicklungsprozess, verworfene Lösungsansätze, Designentscheidungen, Inspirat
 
 
 ## Video-Dokumentation (Lukas)
-
-anschaulich, geeignet für das Portfolio
+Demovideo Re:act
+https://github.com/user-attachments/assets/35be8a68-be1a-4026-98fe-d847e1191600
 
 
 ## Lernfortschritt
