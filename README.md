@@ -23,6 +23,8 @@ Breadboard-Steckplan der Elektronik ?
 
 ## Screenshots / Bilder / ggf. GIFs (Lukas)
 
+Demogruppenbild Re:act
+![Image](https://github.com/user-attachments/assets/191ad0cc-ac8f-4a8d-87e6-286e4f79e11f)
 
 ## Bericht zum Umsetzungsprozess (Adrian) (Lukas)
 
