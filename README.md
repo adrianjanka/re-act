@@ -135,7 +135,7 @@ Entwicklungsprozess, verworfene Lösungsansätze, Designentscheidungen, Inspirat
 - **14.05.2025**: JS-Skript zur Umwandlung von Hex-Farben in LAT-Light-Codes entwickelt.
 - **15.05.2025**: Datenbank-Anbindung realisiert; AJAX-Save-Funktion und History-Chart via Chart.js fertiggestellt.
 
-1. Entwurf
+Konzept Entwurf
 ![Image](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/Konzept.png)
 
 ---
@@ -200,5 +200,7 @@ Entwicklungsprozess, verworfene Lösungsansätze, Designentscheidungen, Inspirat
 
 ## Video-Dokumentation
 Demovideo Re:act
+
+
 ![](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/Demovideo_IM4_React.MOV)
 
