@@ -22,16 +22,16 @@ Verbindungsschema der digitalen und haptischen Komponenten bzw. Kommunikationswe
 ### Legende der Komponenten
 
 #### Clients
-**Browser UI**: Benutzeroberfläche im Webbrowser, gesteuert via Touchpad
-**TouchDesigner App**: Lokale TouchDesigner-Datei mit eingebautem Webserver
+**Browser UI**: Benutzeroberfläche im Webbrowser, gesteuert via Touchpad<br>
+**TouchDesigner App**: Lokale TouchDesigner-Datei mit eingebautem Webserver<br>
 **Camera**: liefert Farbe/Video-Input an TouchDesigner
 
 #### Netzwerk
-**Router**: verbindet Clients, Server und DMX-Hardware
+**Router**: verbindet Clients, Server und DMX-Hardware<br>
 **DMX512-Decoder → dxtSeries/NodeIV/Euro Lite → LAT Lights**: Lichtsteuerungs-Chain
 
 #### Server
-**Webserver (PHP + MySQL)**: Host für Frontend, PHP-APIs (save_colors.php, get_colors.php)
+**Webserver (PHP + MySQL)**: Host für Frontend, PHP-APIs (save_colors.php, get_colors.php)<br>
 **MariaDB**: speichert Farb-Presets mit Zeitstempel und Name
 
 
