@@ -201,6 +201,7 @@ Konzept Entwurf<br>
 
 
 ## Video-Dokumentation
-Download Demovideo Re:act<br>
-[Re:act Video](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/Demovideo_IM4_React.MOV)
+Demovideo Re:act<br>
+
+[![Video ansehen](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/komponentenplan.png)](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/Demovideo_IM4_React.MOV)
 
