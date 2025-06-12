@@ -44,6 +44,13 @@ Wir haben kein Breadboard benutzt, aus diesem Grund haben wir kein Steckschema.
 Demogruppenbild Re:act
 ![Image](https://github.com/user-attachments/assets/191ad0cc-ac8f-4a8d-87e6-286e4f79e11f)
 
+TouchDesigner
+[![Image](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/TouchDesigner_1)
+[![Image](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/TouchDesigner_2)
+
+Frontend
+[![Image](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/Screenshot_Frontend.png)
+
 ## Bericht zum Umsetzungsprozess (Adrian) (Lukas)
 
 Entwicklungsprozess, verworfene Lösungsansätze, Designentscheidungen, Inspirationen, Fehlschläge und Umplanung, Challenges, Lerneffekt, Known Bugs, Planung, Aufgaben- verteilung, Hilfsmittel (KI-Hilfsmittel erlaubt, erwünscht -> erwähnen)
