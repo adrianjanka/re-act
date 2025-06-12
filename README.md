@@ -8,6 +8,46 @@ Eine interaktive LAT-Lights-Installation für die SGKM-Tagung, die über Auto- u
 
 verständliche Schritt-für-Schritt-Anleitung, um  das Projekt nachzubauen
 
+### für User
+
+#### 1. Start & Idle-Screen
+1. **Touch the Mousepad**, um das Overlay auszublenden und zur Modus-Auswahl zu gelangen.
+
+---
+
+#### 2. Auto Mode  
+1. Klicke oben auf **Auto Mode**, um das Panel zu öffnen.  
+2. **Warte**, bis die Kamera dich erkennt.
+4. Gib dem System Zeit, die LED-Röhren automatisch einzustellen.
+
+---
+
+#### 3. Manual Mode  
+1. Klicke oben auf **Manual Mode**, um das Panel zu öffnen.  
+2. **Farbwahl**  
+   - Zu jeder der 6 Röhren gehört ein Color-Picker direkt darunter.  
+   - Klicke auf einen Picker und wähle deine Wunschfarbe.  
+   - Die Röhre färbt sich sofort.
+3. **Farbanimationen**
+   - Animationen (Rainbow, Heartbeat, Impulse, Mint, SGKM) auswählen.
+   - Die gewählte Animationen erscheint auf den Röhren.
+4. **Reset Colors**  
+   - Klick auf **Reset Colors**, um alle Picker auf Schwarz zurück­zusetzen und die Röhren grau zu machen.  
+5. **Save to DB**  
+   - Klick auf **Save to DB**, um die aktuellen Farben in der Datenbank zu speichern.  
+   - **Tipp:** Nach dem Klick wird das Chart automatisch aktualisiert.  
+6. **History**  
+   - Klick auf **History**, um das Chart mit den zuletzt gespeicherten Presets anzuzeigen.
+   - Klick erneut auf **History**, um das Chart auszublenden.  
+
+---
+
+#### 4. Abschliessen
+- Zum Neustarten des Idle-Screens 10 Sekunden lang keine Eingabe tätigen.
+
+
+### für Entwickler
+
 ## Flussdiagramm (Lukas)
 
 Screen-Flow
