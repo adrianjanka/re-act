@@ -8,7 +8,7 @@ Eine interaktive LAT-Lights-Installation für die SGKM-Tagung, die über Auto- u
 
 verständliche Schritt-für-Schritt-Anleitung, um  das Projekt nachzubauen
 
-### für User
+### Für User
 
 #### 1. Start & Idle-Screen
 1. **Touch the Mousepad**, um das Overlay auszublenden und zur Modus-Auswahl zu gelangen.
@@ -40,13 +40,49 @@ verständliche Schritt-für-Schritt-Anleitung, um  das Projekt nachzubauen
    - Klick auf **History**, um das Chart mit den zuletzt gespeicherten Presets anzuzeigen.
    - Klick erneut auf **History**, um das Chart auszublenden.  
 
+
+### Für Entwickler
+
+#### 1. Frontend
+1. **Git Repository klonen**, https://github.com/adrianjanka/re-act.git
+2. auf Webserver laufen lassen (PHP genügt)
+
 ---
 
-#### 4. Abschliessen
-- Zum Neustarten des Idle-Screens 10 Sekunden lang keine Eingabe tätigen.
+#### 2. Backend
+1. **Datenbank erstellen**
+CREATE DATABASE IF NOT EXISTS re_act_db;
+USE re_act_db;
+``` sql
+CREATE TABLE IF NOT EXISTS re_act_colors (
+  id          INT AUTO_INCREMENT PRIMARY KEY,
+  name        VARCHAR(255),
+  erstellt_am DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  farbe       JSON           NOT NULL
+) ENGINE=InnoDB CHARSET=utf8mb4;
+```
 
+2. **db env vars anpassen**, im php script
+---
 
-### für Entwickler
+#### 3. Touchdesigner
+1. **SGKM_Lats.toe lokal öffnen**,
+**Wichtig:** Das Gerät welches die TouchDesigner Datei öffnet, muss im Netz des Routers sein (wird weiter unten beschrieben)!
+
+---
+
+#### 4. physische Komponente
+- **Kamera** für Farberkennung im Auto Mode  
+- **Router** Schnittstelle zwischen Software und Hardware / sorgt für die Verbindung zu TouchDesigner
+- **DMX512-Controller** wird mit Router verbunden
+- **NodeIV / Euro Lite / dxtSeries** wird mit DMX verbunden
+- **6 × LAT-Lights** werden mit DMX-Controller verbunden
+- **Laptop** muss im Netz des Routers sein!
+- **Stromversorgung** für Hardwareteile
+- **Ethernet-/Netzwerkkabel** zur Verbindung Server ↔ Router ↔ DMX-Hardware ↔ LAT-Lights
+
+---
+
 
 ## Flussdiagramm (Lukas)
 
