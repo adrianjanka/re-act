@@ -17,9 +17,27 @@ Screen-Flow
 
 Verbindungsschema der digitalen und haptischen Komponenten bzw. Kommunikationswege
 
+![Image](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/komponentenplan.png)
+
+### Legende der Komponenten
+
+#### Clients
+**Browser UI**: Benutzeroberfläche im Webbrowser, gesteuert via Touchpad
+**TouchDesigner App**: Lokale TouchDesigner-Datei mit eingebautem Webserver
+**Camera**: liefert Farbe/Video-Input an TouchDesigner
+
+#### Netzwerk
+**Router**: verbindet Clients, Server und DMX-Hardware
+**DMX512-Decoder → dxtSeries/NodeIV/Euro Lite → LAT Lights**: Lichtsteuerungs-Chain
+
+#### Server
+**Webserver (PHP + MySQL)**: Host für Frontend, PHP-APIs (save_colors.php, get_colors.php)
+**MariaDB**: speichert Farb-Presets mit Zeitstempel und Name
+
+
 ## Steckschema (Adrian)
 
-Breadboard-Steckplan der Elektronik ?
+Wir haben kein Breadboard benutzt, aus diesem Grund haben wir kein Steckschema.
 
 ## Screenshots / Bilder / ggf. GIFs (Lukas)
 
