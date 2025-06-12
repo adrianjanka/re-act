@@ -4,9 +4,7 @@
 
 Eine interaktive LAT-Lights-Installation für die SGKM-Tagung, die über Auto- und Manual-Mode gesteuert wird. In Auto-Mode reagieren LAT-Lights per Kamera-Input und färben die Lights nach der Farbe des Oberteils der Besucher. Im Manual-Mode lassen sie sich per Web-Interface mit Color-Picker und vordefinierten Animationen steuern. Ausserdem gibt es eine History welche die gespeicherten Farb-Presets aus der Datenbank lädt und diese in einem Chart darstellt.
 
-## Reproduzierbarkeit (Adrian)
-
-verständliche Schritt-für-Schritt-Anleitung, um  das Projekt nachzubauen
+## Reproduzierbarkeit
 
 ### Für User
 
@@ -84,14 +82,12 @@ CREATE TABLE IF NOT EXISTS re_act_colors (
 ---
 
 
-## Flussdiagramm (Lukas)
+## Flussdiagramm
 
 Screen-Flow
-<img width="927" alt="Image" src="https://github.com/user-attachments/assets/5cbfb2a4-f3b5-4c08-aee6-6ad892fe5d22" />
+![Image](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/Screenflow_IM4_React.png)
 
-## Komponentenplan (Adrian)
-
-Verbindungsschema der digitalen und haptischen Komponenten bzw. Kommunikationswege
+## Komponentenplan
 
 ![Image](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/komponentenplan.png)
 
@@ -111,32 +107,98 @@ Verbindungsschema der digitalen und haptischen Komponenten bzw. Kommunikationswe
 **MariaDB**: speichert Farb-Presets mit Zeitstempel und Name
 
 
-## Steckschema (Adrian)
+## Steckschema
 
 Wir haben kein Breadboard benutzt, aus diesem Grund haben wir kein Steckschema.
 
-## Screenshots / Bilder / ggf. GIFs (Lukas)
+## Screenshots / Bilder / ggf. GIFs
 
 Demogruppenbild Re:act
 ![Image](https://github.com/user-attachments/assets/191ad0cc-ac8f-4a8d-87e6-286e4f79e11f)
 
 TouchDesigner
-[![Image](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/TouchDesigner_1)
-[![Image](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/TouchDesigner_2)
+![Image](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/TouchDesigner_1)
+![Image](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/TouchDesigner_2)
 
 Frontend
-[![Image](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/Screenshot_Frontend.png)
+![Image](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/Screenshot_Frontend.png)
 
-## Bericht zum Umsetzungsprozess (Adrian) (Lukas)
+## Bericht zum Umsetzungsprozess (Lukas)
 
 Entwicklungsprozess, verworfene Lösungsansätze, Designentscheidungen, Inspirationen, Fehlschläge und Umplanung, Challenges, Lerneffekt, Known Bugs, Planung, Aufgaben- verteilung, Hilfsmittel (KI-Hilfsmittel erlaubt, erwünscht -> erwähnen)
 
+### Entwicklungsprozess  
+- **29.04.2025**: Konzeptionen, UX/UI Design,
+- **30.04.2025**: Designentwurf im UX-Coaching abgestimmt, Personas und Projekt­übersicht erstellt.  
+- **12.05.2025**: Frontend-Grundgerüst fertig, Hardware­material eingetroffen.  
+- **13.05.2025**: Manual Mode mit Reset-Color-Button implementiert; erste HTTP-Requests an TouchDesigner zum Farb­versand.
+- **14.05.2025**: JS-Skript zur Umwandlung von Hex-Farben in LAT-Light-Codes entwickelt.
+- **15.05.2025**: Datenbank-Anbindung realisiert; AJAX-Save-Funktion und History-Chart via Chart.js fertiggestellt.
 
-## Video-Dokumentation (Lukas)
-Download Demovideo Re:act
-https://github.com/user-attachments/assets/35be8a68-be1a-4026-98fe-d847e1191600
+1. Entwurf
+![Image](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/Konzept.png)
+
+---
+
+### Verworfene Lösungsansätze  
+- Kamera-Trigger zum Deaktivieren des Idle-Screens (zu selten praktikabel, Hemmschwelle zu hoch).
+
+---
+
+### Designentscheidungen  
+- **Touchpad als einziger Auslöser** für den Idle-Screen, um Bedien­klarheit zu schaffen.  
+- **Akkordeon-Interface** für direkte Moduswahl (Auto vs. Manual) ohne Seitennavigation.  
+- **Schlichte Button-Anordnung** und Farb-Picker direkt unter jeder Röhre für sofortiges Feedback.  
+- **Chart.js** für History-Visualisierung, X-Achsen-Ticks und Tooltips deaktiviert.
+
+---
+
+### Inspirationen  
+- Interaktive Lichtinstallationen in Museen.  
+- Open-Source DMX-Controller-Interfaces im Theater.
+
+---
+
+### Fehlschläge & Umplanung  
+- **DMX-Verbindung** am 12.05.: fehlendes Stromkabel → Umplanung der Hardware­checks.  
+- **Chart-Layout**: X-Achsen-Labels störten → ausgeblendet, Bar-Thickness angepasst.  
+- **Idle-Screen-Fade**: Sprünge im Timeout → CSS-Transition mit `transitionend` implementiert.
+
+---
+
+### Challenges  
+- Flowchart zur Deaktivierungslogik erstellen und Varianten bewerten.  
+- Zu klare Call-to-Action vs. Flexibilität im UI: Interviews zeigten hohen Simplizitätsbedarf.  
+- Synchronisation zwischen JS `fetch()` und PHP/PDO bei Save/Load.
+
+---
+
+### Lerneffekt  
+- Umgang mit **Chart.js**-Optionen und dynamischem Canvas-Resizing.  
+- **PHP/PDO**-Integration mit JSON-Spalte in MariaDB.  
+- Einsatz von CSS-Transitions für flüssige UI-Animationen.
+
+---
+
+### Planung  
+- Nächste Schritte: Pagination im History-Chart, Validierung des `name`-Inputs, Deployment-Dokumentation.
+
+---
+
+### Aufgabenverteilung  
+- **Adrian**: Frontend-Dev (HTML/CSS/JS), Chart.js, AJAX/PHP-API.  
+- **Lukas**: Hardware-Setup (LATs, DMX, Router) / Organisation
+- **Jan**: TouchDesigner-File (WebSocket-Server, CHOP-Netz).
+
+---
+
+### Hilfsmittel  
+- **ChatGPT**: Generierung von Frontend Problematiken / Dokumentation
+- **Figma**: UI-Mockups und UX-Coaching.  
+- **TouchDesigner**: Prototyping der Auto-Mode-Logik.
 
 
-## Lernfortschritt
+## Video-Dokumentation
+Demovideo Re:act
+![](https://github.com/adrianjanka/re-act/blob/main/Dokumentation/Demovideo_IM4_React.MOV)
 
- ergibt sich vor allem aus dem Engagement in Präsenz ?
