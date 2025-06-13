@@ -158,6 +158,7 @@ Konzept Entwurf<br>
 ### Inspirationen  
 - Interaktive Lichtinstallationen in Museen.  
 - Open-Source DMX-Controller-Interfaces im Theater.
+– latlights.de
 
 ---
 
@@ -172,6 +173,7 @@ Konzept Entwurf<br>
 - Flowchart zur Deaktivierungslogik erstellen und Varianten bewerten.  
 - Zu klare Call-to-Action vs. Flexibilität im UI: Interviews zeigten hohen Simplizitätsbedarf.  
 - Synchronisation zwischen JS `fetch()` und PHP/PDO bei Save/Load.
+- Menschen zur Interaktion animieren
 
 ---
 
@@ -179,7 +181,7 @@ Konzept Entwurf<br>
 - Umgang mit **Chart.js**-Optionen und dynamischem Canvas-Resizing.  
 - **PHP/PDO**-Integration mit JSON-Spalte in MariaDB.  
 - Einsatz von CSS-Transitions für flüssige UI-Animationen.
-
+- Das Interesse an Re:act hielt sich gering. Vermutlich weil das Ziel der Veranstaltungsbesucherinnen ein anderes war. Anfangs war das System nur als Laptop aufgestelt, später stellte ich mich dazu, worauf einzelne sich danach interessiert haben.
 ---
 
 ### Planung  
@@ -189,7 +191,7 @@ Konzept Entwurf<br>
 
 ### Aufgabenverteilung  
 - **Adrian**: Frontend-Dev (HTML/CSS/JS), Chart.js, AJAX/PHP-API.  
-- **Lukas**: Hardware-Setup (LATs, DMX, Router) / Organisation
+- **Lukas**: Hardware-Setup (LATs, DMX, Router) / Organisation / Konzeption
 - **Jan**: TouchDesigner-File (WebSocket-Server, CHOP-Netz).
 
 ---
